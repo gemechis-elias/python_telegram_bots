@@ -60,16 +60,20 @@ async def handle_message(message: types.Message):
 
        
         # Upload the photo to the OCR API
-        with open('photo.jpg', 'rb') as f:
+        
+        with open(new_file_path, 'rb') as f:
             response = requests.post(
                 'https://api.ocr.space/parse/image',
-                files={'photo.jpg': f},
+                files={new_file_path: f},
                 data={'apikey': 'K86055456288957'}
             )
+        # CLOSE THE FILE
+        f.close()
 
         # Extract the text from the OCR API response
         result = response.json()
         text = result['ParsedResults'][0]['ParsedText']
+        print("✅ Text extracted from image successfully")
 
         # Send the text back to the user if it's not empty
         if text:
