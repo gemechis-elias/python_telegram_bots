@@ -1,3 +1,7 @@
+# Author : Gemechis Elias
+# Date created : Nov 28, 2023
+# Description : Simple Bot Command
+
 import asyncio
 import logging
 import sys

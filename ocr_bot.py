@@ -1,3 +1,7 @@
+# Author : Gemechis Elias
+# Date created : Nov 28, 2023
+# Description : Simple OCR BOT
+
 import asyncio
 import logging
 import sys
@@ -87,7 +91,7 @@ async def handle_message(message: types.Message):
 
 async def main() -> None:
     # Initialize Bot instance with a default parse mode which will be passed to all API calls
-    bot = Bot("6728616782:AAE7Mm1G6sZlXJSayt13GULtEBWTUMUEJV0", parse_mode=ParseMode.HTML)
+    bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
     # And the run events dispatching
     await dp.start_polling(bot)
 
